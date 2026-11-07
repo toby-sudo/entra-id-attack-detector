@@ -1,0 +1,42 @@
+{
+    "generated_at": "2026-11-07T09:29:33.602728+00:00",
+    "total_alerts": 2,
+    "alerts": [
+        {
+            "alert_id": "SOC-0001",
+            "alert_name": "Brute Force Login Attempt",
+            "severity": "High",
+            "source_ip": "192.0.2.11",
+            "mitre_technique": "T1110 - Brute Force",
+            "details": {
+                "alert_name": "Brute Force Login Attempt",
+                "user": "bob@demo.local",
+                "source_ip": "192.0.2.11",
+                "failed_attempts": "5",
+                "first_attempt": "2026-11-07 09:02:00+00:00",
+                "last_attempt": "2026-11-07 09:04:00+00:00",
+                "severity": "High",
+                "mitre_technique": "T1110 - Brute Force"
+            },
+            "investigation_status": "Pending"
+        },
+        {
+            "alert_id": "SOC-0002",
+            "alert_name": "Possible Password Spray",
+            "severity": "High",
+            "source_ip": "198.51.100.20",
+            "mitre_technique": "T1110.003 - Password Spraying",
+            "details": {
+                "alert_name": "Possible Password Spray",
+                "source_ip": "198.51.100.20",
+                "affected_users": "['charlie@demo.local', 'david@demo.local', 'emma@demo.local']",
+                "distinct_users": "3",
+                "first_attempt": "2026-11-07 09:05:00+00:00",
+                "last_attempt": "2026-11-07 09:06:00+00:00",
+                "severity": "High",
+                "mitre_technique": "T1110.003 - Password Spraying"
+            },
+            "investigation_status": "Pending"
+        }
+    ]
+}

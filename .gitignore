@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Test files
+.pytest_cache/
+
+# Generated files

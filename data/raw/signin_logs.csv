@@ -1,0 +1,12 @@
+
+createdDateTime,userPrincipalName,ipAddress,appDisplayName,status,errorCode,city,country
+2026-11-07T09:00:00Z,alice@demo.local,192.0.2.10,Microsoft 365,Success,0,Hyderabad,India
+2026-11-07T09:02:00Z,bob@demo.local,192.0.2.11,Microsoft 365,Failure,50126,Hyderabad,India
+2026-11-07T09:02:30Z,bob@demo.local,192.0.2.11,Microsoft 365,Failure,50126,Hyderabad,India
+2026-11-07T09:03:00Z,bob@demo.local,192.0.2.11,Microsoft 365,Failure,50126,Hyderabad,India
+2026-11-07T09:03:30Z,bob@demo.local,192.0.2.11,Microsoft 365,Failure,50126,Hyderabad,India
+2026-11-07T09:04:00Z,bob@demo.local,192.0.2.11,Microsoft 365,Failure,50126,Hyderabad,India
+2026-11-07T09:05:00Z,charlie@demo.local,198.51.100.20,Microsoft 365,Failure,50126,Mumbai,India
+2026-11-07T09:05:30Z,david@demo.local,198.51.100.20,Microsoft 365,Failure,50126,Delhi,India
+2026-11-07T09:06:00Z,emma@demo.local,198.51.100.20,Microsoft 365,Failure,50126,Bengaluru,India
+2026-11-07T09:07:00Z,alice@demo.local,203.0.113.15,Microsoft 365,Success,0,London,United Kingdom
