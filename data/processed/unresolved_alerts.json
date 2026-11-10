@@ -1,0 +1,31 @@
+{
+    "total_unresolved_alerts": 2,
+    "pending_alerts": [
+        {
+            "alert_id": "SOC-E9691E9BB4DB",
+            "alert_name": "Successful Login After Repeated Failures",
+            "severity": "High",
+            "user": "bob@demo.local",
+            "source_ip": "192.0.2.11",
+            "recommended_actions": [
+                "Escalate the alert for analyst review.",
+                "Consider resetting credentials if compromise is confirmed.",
+                "Revoke active sessions if unauthorized access is confirmed."
+            ]
+        }
+    ],
+    "escalated_alerts": [
+        {
+            "alert_id": "SOC-ED60F62B7B65",
+            "alert_name": "Brute Force Login Attempt",
+            "severity": "Medium",
+            "user": "bob@demo.local",
+            "source_ip": "192.0.2.11",
+            "recommended_actions": [
+                "Validate the activity with the account owner.",
+                "Review account security and authentication methods.",
+                "Consider blocking the source IP if malicious activity is confirmed."
+            ]
+        }
+    ]
+}

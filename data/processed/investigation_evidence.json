@@ -1,0 +1,150 @@
+{
+    "total_investigations": 3,
+    "investigations": [
+        {
+            "alert_id": "SOC-ED60F62B7B65",
+            "alert_name": "Brute Force Login Attempt",
+            "severity": "Medium",
+            "severity_reason": "Repeated failed authentication attempts were detected. No successful login is established by this alert alone.",
+            "mitre_technique": "T1110 - Brute Force",
+            "detection_evidence": {
+                "user": "bob@demo.local",
+                "source_ip": "192.0.2.11",
+                "failed_attempts": 5,
+                "affected_users": [],
+                "distinct_users": "N/A",
+                "first_attempt": "2026-11-07 09:02:00+00:00",
+                "last_attempt": "2026-11-07 09:04:00+00:00",
+                "first_failure": "N/A",
+                "successful_login": "N/A"
+            },
+            "evidence_completeness": {
+                "score": 100,
+                "level": "High",
+                "reason": "All expected evidence fields are present for this detection."
+            },
+            "investigation": {
+                "current_status": "Escalated",
+                "analyst_notes": [
+                    {
+                        "analyst": "SOC Analyst L1",
+                        "note": "Reviewed authentication logs and identified five consecutive failed sign-in attempts against bob@demo.local from source IP 192.0.2.11 within a short time window. A subsequent successful login was also observed from the same IP. Further investigation is required to verify whether the activity was legitimate or unauthorized.",
+                        "added_at": "2026-11-09T11:54:17.318755+00:00"
+                    }
+                ],
+                "status_history": [
+                    {
+                        "previous_status": "In Progress",
+                        "new_status": "Escalated",
+                        "changed_at": "2026-11-09T12:03:51.516519+00:00"
+                    }
+                ],
+                "closure_reason": null
+            },
+            "investigation_recommendations": [
+                "Review authentication logs for repeated failed attempts.",
+                "Check whether the targeted account has privileged access.",
+                "Review other accounts targeted by the same source IP."
+            ],
+            "recommended_actions": [
+                "Validate the activity with the account owner.",
+                "Review account security and authentication methods.",
+                "Consider blocking the source IP if malicious activity is confirmed."
+            ]
+        },
+        {
+            "alert_id": "SOC-2F53D29588C0",
+            "alert_name": "Possible Password Spray",
+            "severity": "Medium",
+            "severity_reason": "One source IP targeted multiple accounts. The pattern is suspicious but does not prove that the same password was used.",
+            "mitre_technique": "T1110.003 - Password Spraying",
+            "detection_evidence": {
+                "user": "N/A",
+                "source_ip": "198.51.100.20",
+                "failed_attempts": "N/A",
+                "affected_users": [
+                    "charlie@demo.local",
+                    "david@demo.local",
+                    "emma@demo.local"
+                ],
+                "distinct_users": 3,
+                "first_attempt": "2026-11-07 09:05:00+00:00",
+                "last_attempt": "2026-11-07 09:06:00+00:00",
+                "first_failure": "N/A",
+                "successful_login": "N/A"
+            },
+            "evidence_completeness": {
+                "score": 100,
+                "level": "High",
+                "reason": "All expected evidence fields are present for this detection."
+            },
+            "investigation": {
+                "current_status": "Resolved",
+                "analyst_notes": [],
+                "status_history": [
+                    {
+                        "previous_status": "Pending",
+                        "new_status": "In Progress",
+                        "changed_at": "2026-11-09T14:09:08.249918+00:00"
+                    },
+                    {
+                        "previous_status": "In Progress",
+                        "new_status": "Resolved",
+                        "changed_at": "2026-11-09T14:09:55.048913+00:00",
+                        "closure_reason": "Investigation completed. The authentication activity was reviewed and no evidence of unauthorized access was identified."
+                    }
+                ],
+                "closure_reason": "Investigation completed. The authentication activity was reviewed and no evidence of unauthorized access was identified."
+            },
+            "investigation_recommendations": [
+                "Identify all accounts targeted by the source IP.",
+                "Review authentication activity for the affected accounts.",
+                "Check whether any targeted account had a successful login."
+            ],
+            "recommended_actions": [
+                "Review affected accounts for suspicious activity.",
+                "Check for additional authentication anomalies.",
+                "Consider blocking the source IP if malicious activity is confirmed."
+            ]
+        },
+        {
+            "alert_id": "SOC-E9691E9BB4DB",
+            "alert_name": "Successful Login After Repeated Failures",
+            "severity": "High",
+            "severity_reason": "A successful login followed repeated failures for the same account and source IP. This requires prompt investigation but does not confirm account compromise.",
+            "mitre_technique": "T1110 - Brute Force",
+            "detection_evidence": {
+                "user": "bob@demo.local",
+                "source_ip": "192.0.2.11",
+                "failed_attempts": 5,
+                "affected_users": [],
+                "distinct_users": "N/A",
+                "first_attempt": "2026-11-07 09:02:00+00:00",
+                "last_attempt": "2026-11-07 09:05:00+00:00",
+                "first_failure": "2026-11-07 09:02:00+00:00",
+                "successful_login": "2026-11-07 09:05:00+00:00"
+            },
+            "evidence_completeness": {
+                "score": 100,
+                "level": "High",
+                "reason": "All expected evidence fields are present for this detection."
+            },
+            "investigation": {
+                "current_status": "Pending",
+                "analyst_notes": [],
+                "status_history": [],
+                "closure_reason": null
+            },
+            "investigation_recommendations": [
+                "Verify the successful login with the account owner.",
+                "Review the account's activity after the successful login.",
+                "Check for suspicious access to applications or resources."
+            ],
+            "recommended_actions": [
+                "Escalate the alert for analyst review.",
+                "Consider resetting credentials if compromise is confirmed.",
+                "Revoke active sessions if unauthorized access is confirmed."
+            ]
+        }
+    ]
+}

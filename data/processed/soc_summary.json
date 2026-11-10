@@ -1,0 +1,21 @@
+{
+    "total_alerts": 3,
+    "severity_distribution": {
+        "Medium": 2,
+        "High": 1
+    },
+    "status_distribution": {
+        "Escalated": 1,
+        "Resolved": 1,
+        "Pending": 1
+    },
+    "detection_distribution": {
+        "Brute Force Login Attempt": 1,
+        "Possible Password Spray": 1,
+        "Successful Login After Repeated Failures": 1
+    },
+    "pending_alerts": 1,
+    "escalated_alerts": 1,
+    "resolved_alerts": 1,
+    "false_positive_alerts": 0
+}

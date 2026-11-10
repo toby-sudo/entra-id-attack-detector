@@ -23,7 +23,7 @@ def detect_brute_force(
         if column not in logs.columns:
             raise ValueError(f"Missing column: {column}")
 
-    logs = logs.copy()
+    logs = logs.drop_duplicates().copy()
 
     logs["createdDateTime"] = pd.to_datetime(
         logs["createdDateTime"],

@@ -1,7 +1,7 @@
-
 from src.ingestion.log_reader import load_signin_logs
 from src.detectors.brute_force import detect_brute_force
 from src.detectors.password_spray import detect_password_spray
+from src.detectors.failure_then_success import detect_failure_then_success
 from src.reports.report_generator import generate_alert_report
 
 
@@ -22,9 +22,13 @@ def run_detection_engine():
     brute_force_alerts = detect_brute_force(logs)
     all_alerts.extend(brute_force_alerts)
 
-    print("Running password-spray detection...")
+    print("\nRunning password-spray detection...")
     password_spray_alerts = detect_password_spray(logs)
     all_alerts.extend(password_spray_alerts)
+
+    print("\nRunning failure-then-success detection...")
+    failure_success_alerts = detect_failure_then_success(logs)
+    all_alerts.extend(failure_success_alerts)
 
     print("\n" + "=" * 55)
     print("                 ALERT SUMMARY")

@@ -21,7 +21,7 @@ def detect_password_spray(logs, threshold=3, window_minutes=10):
         if column not in logs.columns:
             raise ValueError(f"Missing column: {column}")
 
-    logs = logs.copy()
+    logs = logs.drop_duplicates().copy()
 
     logs["createdDateTime"] = pd.to_datetime(
         logs["createdDateTime"],
