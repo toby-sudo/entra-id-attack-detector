@@ -265,3 +265,19 @@ The dataset uses documentation-only IP addresses and fictional user accounts.
 ## Author
 
 Developed as a cybersecurity portfolio project focused on identity threat detection, SOC operations, and security investigation workflows.
+
+## Dashboard Screenshots
+
+The dashboard uses synthetic Entra ID sign-in data for demonstration purposes.
+
+### 1. Security Overview
+
+![Security Overview](docs/images/security-overview.png)
+
+### 2. Alert Management
+
+![Alert Management](docs/images/alert-management.png)
+
+### 3. Investigation Workspace
+
+![Investigation Workspace](docs/images/investigation-workspace.png)
