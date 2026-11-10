@@ -27,6 +27,11 @@ It processes sign-in log data, identifies suspicious authentication activities, 
 - Unresolved alert reporting.
 - Investigation evidence reporting.
 - Command-line interface for alert management.
+- Interactive Streamlit SOC dashboard.
+- Searchable alerts with severity, status, and detection filters.
+- Interactive security analytics using Plotly charts.
+- Investigation workspace with alert evidence viewing.
+- Dashboard-based investigation notes and status updates.
 - Automated unit testing using Pytest.
 
 ## Detection Capabilities
@@ -99,6 +104,8 @@ Generated reports are stored in `data/processed/`.
 
 - Python 3.12
 - Pandas
+- Streamlit
+- Plotly
 - JSON
 - CSV
 - Pytest
@@ -136,6 +143,10 @@ entra-id-attack-detector/
 │   │
 │   ├── cli/
 │   │   └── alert_manager.py
+│   │
+│   ├── dashboard/
+│   │   ├── __init__.py
+│   │   └── app.py
 │   │
 │   └── detection_engine.py
 │
@@ -202,6 +213,16 @@ python -m src.cli.alert_manager
 
 The CLI supports viewing alerts, adding investigation notes, changing statuses, escalating alerts, resolving incidents, viewing reports, and refreshing SOC reports.
 
+### Launch the SOC Dashboard
+
+```bash
+streamlit run src/dashboard/app.py
+```
+
+Open `http://localhost:8501` in your browser.
+
+The dashboard provides alert analytics, searchable alert records, investigation notes, and status management.
+
 ### Run automated tests
 
 ```bash
@@ -234,7 +255,11 @@ The dataset uses documentation-only IP addresses and fictional user accounts.
 - Additional identity-based attack detection rules.
 - MFA fatigue and suspicious MFA activity detection.
 - Risk-based alert prioritization.
-- Detection dashboards and visual analytics.
+- Microsoft Graph API integration for real Entra ID sign-in logs.
+- Additional identity-based attack detection rules.
+- MFA fatigue and suspicious MFA activity detection.
+- Risk-based alert prioritization.
+- SIEM integration and automated incident response.
 - SIEM integration and automated incident response.
 
 ## Author
